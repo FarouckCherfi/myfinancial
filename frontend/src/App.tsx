@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import {Helmet} from "react-helmet";
+import HomeContainer from './containers/Home/HomeContainer';
+import Header from './components/Header/Header';
 
 
 const About: React.FC = () => {
@@ -12,18 +14,6 @@ const About: React.FC = () => {
                 <meta name="description" content="This page explains everything about our react app."/>
             </Helmet>
             <div>About</div>
-        </div>
-    );
-};
-
-const Home: React.FC = () => {
-    return (
-        <div>
-            <Helmet>
-                <title>Home page</title>
-                <meta name="description" content="This page is the home page."/>
-            </Helmet>
-            <div>Home</div>
         </div>
     );
 };
@@ -44,10 +34,9 @@ const App: React.FC = () => {
     return (
         <BrowserRouter>
             <div>
-                <Link to="/">Home</Link> <Link to="/about">About</Link> <Link to="/news">News</Link>
-                <br />
+                <Header />
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<HomeContainer />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/news" element={<News />} />
                 </Routes>
