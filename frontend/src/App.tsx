@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import {Helmet} from "react-helmet";
 import HomeContainer from './containers/Home/HomeContainer';
@@ -33,14 +32,12 @@ const News: React.FC = () => {
 const App: React.FC = () => {
     return (
         <BrowserRouter>
-            <div>
                 <Header />
                 <Routes>
                     <Route path="/" element={<HomeContainer />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/news" element={<News />} />
                 </Routes>
-            </div>
         </BrowserRouter>
     );
 }
